@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/focus/static/css/main.34273ea9.css",
+    "main.js": "/focus/static/js/main.81e1eebc.js",
+    "static/js/453.c41d235c.chunk.js": "/focus/static/js/453.c41d235c.chunk.js",
+    "static/media/chimpanzini.mp4": "/focus/static/media/chimpanzini.dd6a1398b31267d31844.mp4",
+    "static/media/laoshi-cosplay.mov": "/focus/static/media/laoshi-cosplay.cc7bdef105c42eb38a2c.mov",
+    "static/media/cappucino.mp4": "/focus/static/media/cappucino.b4e4b736f0dc7f4d3f79.mp4",
+    "static/media/tungtung.mp4": "/focus/static/media/tungtung.7e18ab6aeaaaeab8a044.mp4",
+    "static/media/shark.mp4": "/focus/static/media/shark.44675a63f0304b09206c.mp4",
+    "static/media/wiseworm.mp4": "/focus/static/media/wiseworm.41c9daf756b0315973ad.mp4",
+    "static/media/cactuselephant.mp4": "/focus/static/media/cactuselephant.a5027e58783bb095a40e.mp4",
+    "static/media/thumbs-up.png": "/focus/static/media/thumbs-up.a7dabb8c86bf9705061a.png",
+    "static/media/fail.png": "/focus/static/media/fail.938fade2ce8b772025b1.png",
+    "static/media/5-min-left.png": "/focus/static/media/5-min-left.02fee613c6be9b5ccfe8.png",
+    "static/media/willem_dafoe.png": "/focus/static/media/willem_dafoe.7fe4136b65934ee5ee33.png",
+    "static/media/pray.png": "/focus/static/media/pray.cbdbdb7a06f6e239feab.png",
+    "static/media/swamp-puppy.jpg": "/focus/static/media/swamp-puppy.8e0b1cc6efcff5b47084.jpg",
+    "static/media/side-look.png": "/focus/static/media/side-look.1dd4b084d872125fc8b4.png",
+    "index.html": "/focus/index.html",
+    "main.34273ea9.css.map": "/focus/static/css/main.34273ea9.css.map",
+    "main.81e1eebc.js.map": "/focus/static/js/main.81e1eebc.js.map",
+    "453.c41d235c.chunk.js.map": "/focus/static/js/453.c41d235c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.34273ea9.css",
+    "static/js/main.81e1eebc.js"
+  ]
+}
