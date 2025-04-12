@@ -58,16 +58,23 @@
 }
 #all-tasks-finished-screen>h1 {
     margin: auto;
-    margin-top: 30vh;
+    margin-top: 10vh;
     margin-bottom: 10vh;
 }
 video::-webkit-media-controls-panel {
     background-image: none !important;
     filter: brightness(0.4);
 }
-video {
+#video-player {
     position: fixed;
     right: 0px;
+    top: 10px;
+    text-align: center;
+}
+#video-button {
+    
+    padding: 10px;
+    font-size: 32px;
 }
 h1, h2, h3, p {
     color: black;

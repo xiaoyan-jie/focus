@@ -2,10 +2,20 @@ import { useRef, useState, useEffect } from 'react'
 // import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom'
 import cosplayvid from './laoshi-cosplay.mov';
+import wiseworm from './wiseworm.mp4';
+import tungtung from './tungtung.mp4';
+import shark from './shark.mp4';
+import cactus from './cactuselephant.mp4';
+import cappucino from './cappucino.mp4';
+import chimp from './chimpanzini.mp4';
 import './CompleteActivity.css'
+import thumbsup from './thumbs-up.png'
+import fivemin from './5-min-left.png';
+import lsfail from './fail.png'
 function CompleteActivity() {
+    const finalScreenImgRef = useRef();
     const videoPlayerRef = useRef();
-    const videoList = [cosplayvid];
+    const videoList = [cosplayvid, wiseworm, tungtung, shark, cactus, cappucino, chimp];
     const [ currentVideo, setCurrentVideo ] = useState(cosplayvid);
     const tasksRef = useRef([]); //holds refs to every task display element
     const finalScreenRef = useRef(); //holds ref to the final screen element (you're finished! screen)
@@ -135,6 +145,7 @@ function CompleteActivity() {
             } //get a color based on how many of the tasks were done in the time they set
             var color = "";
             let fraction = completedOverTime / taskList.length;
+            finalScreenImgRef.current.src = getProgressImage(completedOverTime, taskList.length)
             if (fraction <= 0.50) {
                 fraction = fraction / 0.50
                 color = "#" + rgbToHex(Math.floor(255 * fraction)) + rgbToHex(255) + rgbToHex(0);
@@ -203,31 +214,51 @@ function CompleteActivity() {
         }
     }
     const videoPlayerButtonOnClick = () => {
+        let min = 0; let max = 6;
+        let index = Math.floor(Math.random() * (max - min + 1) + min);
+        setCurrentVideo(videoList[index]);
+        console.log(currentVideo);
         videoPlayerRef.current.src = currentVideo
+        videoPlayerRef.current.play();
     }
-    
+    const getProgressImage = (elapsed, total) => {
+        let frac = (1.0 * elapsed) / total;
+        if (frac < 0.33) {
+            return thumbsup;
+        } else if (frac < 0.66) {
+            return fivemin;
+        } else {
+            return lsfail;
+        }
+    }
     return (
     <div>
         <h1>Activity In Progress</h1>
         <h3>Name: {activity.name}</h3>
         <p>{activity.description}</p>
-        <button onClick={videoPlayerButtonOnClick}>change brainrot</button>
-        <video onEnded={videoPlayerButtonOnClick} ref={videoPlayerRef} id="video-player" src={cosplayvid} width="500px" height="500px" controls></video>
+        <div id="video-player">
+            <button id="video-button" onClick={videoPlayerButtonOnClick}>change brainrot</button>
+            <br></br>
+            <video onEnded={videoPlayerButtonOnClick} ref={videoPlayerRef} src={cosplayvid} width="500px" height="500px" controls></video>
+        </div>
         <div>
             {taskList.map((item, index) => {
                 return <div id="complete-activity-task-container" key={index} ref={(el) => {(tasksRef.current[index] = el); return el}}>
                     <p id="complete-activity-task-name">{item.input}</p>
                     <p id="complete-activity-task-timer">{secondsToMinutes(item.elapsed_seconds)} / {item.total_minutes}:00</p>
+                    <img style={{width: 'auto', height: 'auto'}} src={getProgressImage(item.elapsed_seconds, item.total_minutes*60)}></img>
+                    <br></br><br></br>
                     <button onClick={() => { setFocus(item.index); }}>▶️</button>
                     <button onClick={removeFocus}>⏹️</button>
                     <button onClick={() => { finishTask(item.index) }}>✔️</button>
-                    <image style={{width: 'auto', height: 'auto'}} src="thumbs-up.png"></image>
                 </div>
             })}
         </div>
         <div ref={finalScreenRef} id="all-tasks-finished-screen">
             <h1>You're Finished!</h1>
             <p ref={resultsPRef}>placeholder</p>
+            <img ref={finalScreenImgRef}/>
+            <br></br>
             <button onClick={handleResume}>Resume</button>
             <Link onClick={portToHome} id="complete-activity-home" to="/">Home</Link>
         </div>

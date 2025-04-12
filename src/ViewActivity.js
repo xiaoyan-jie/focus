@@ -2,12 +2,18 @@ import { useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom"
 import "./CompleteActivity.css"
 import "./ViewActivity.css"
+import thumbsup from './thumbs-up.png'
+import fivemin from './5-min-left.png';
+import lsfail from './fail.png'
+import sidelook from './side-look.png';
+import uplook from './willem_dafoe.png';
 function ViewActivity() {
     const tasksRef = useRef([]);
     const location = useLocation();
     const { item } = location.state;
     const [activity, setActivity] = useState(item);
     const progressBarRef = useRef();
+    const progressBarImgRef = useRef();
     useEffect(() => {
         console.log(item);
         let taskList = JSON.parse(activity.tasks);
@@ -43,17 +49,32 @@ function ViewActivity() {
         var h = c.toString(16);
         return h.length === 1 ? "0" + h : h;
     }
+    const getProgressImage = (elapsed, total) => {
+        let frac = (1.0 * elapsed) / total;
+        if (frac < 0.33) {
+            return thumbsup;
+        } else if (frac < 0.66) {
+            return fivemin;
+        } else {
+            return lsfail;
+        }
+    }
     return <div >
         <h1>Name: {activity.name}</h1>
         <h3>Description: {activity.description || "(none)"}</h3>
+        <img id="bg1" src={uplook}/>
+        <img id="bg2" src={sidelook}/>
         <div id="progress-bar-container">
             <h3>Progress: </h3>
-            <div id="progress-bar" ref={progressBarRef}></div>
+            <div id="progress-bar" ref={progressBarRef}>
+                <img ref={progressBarImgRef}></img>
+            </div>
         </div>
         {JSON.parse(activity.tasks).map((item, index) => {
             return <div id="complete-activity-task-container" key={index} ref={(el) => {(tasksRef.current[index] = el); return el}}>
                 <p id="complete-activity-task-name">{item.input}</p>
                 <p id="complete-activity-task-timer">{secondsToMinutes(item.elapsed_seconds)} / {item.total_minutes}:00</p>
+                <img src={getProgressImage(item.elapsed_seconds, item.total_minutes * 60)}/>
             </div>
         })}
     </div>
