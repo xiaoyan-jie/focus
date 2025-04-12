@@ -212,7 +212,7 @@ function CompleteActivity() {
         <h3>Name: {activity.name}</h3>
         <p>{activity.description}</p>
         <button onClick={videoPlayerButtonOnClick}>change brainrot</button>
-        <video onEnded={videoPlayerButtonOnClick} ref={videoPlayerRef} id="video-player" src={cosplayvid} width="200px" height="200px" controls></video>
+        <video onEnded={videoPlayerButtonOnClick} ref={videoPlayerRef} id="video-player" src={cosplayvid} width="500px" height="500px" controls></video>
         <div>
             {taskList.map((item, index) => {
                 return <div id="complete-activity-task-container" key={index} ref={(el) => {(tasksRef.current[index] = el); return el}}>
@@ -221,6 +221,7 @@ function CompleteActivity() {
                     <button onClick={() => { setFocus(item.index); }}>▶️</button>
                     <button onClick={removeFocus}>⏹️</button>
                     <button onClick={() => { finishTask(item.index) }}>✔️</button>
+                    <image style={{width: 'auto', height: 'auto'}} src="thumbs-up.png"></image>
                 </div>
             })}
         </div>

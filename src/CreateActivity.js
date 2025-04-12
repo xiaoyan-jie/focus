@@ -140,7 +140,7 @@ function CreateActivity() {
             }))}))
     }
     return (
-        <div>
+        <div id="prayers-needed">
             <h1>Create Activity</h1>
             <form>
                 <div className="create-activity-flex-div">

@@ -7,7 +7,7 @@ function ActivityList() {
     const itemsRefs = useRef([]);
     useEffect(() => {
         // localStorage.clear();
-        //okay let's try this again
+        console.log("wow")
         setItems(JSON.parse(localStorage.getItem("activities-list")) || []); //runs only once, unpacks local storage into the items state
     }, [])
     useEffect(() => {

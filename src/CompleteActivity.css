@@ -65,3 +65,14 @@ video::-webkit-media-controls-panel {
     background-image: none !important;
     filter: brightness(0.4);
 }
+video {
+    position: fixed;
+    right: 0px;
+}
+h1, h2, h3, p {
+    color: black;
+}
+#live-teacher-view {
+    width: 500px;
+    height: 500px;
+}
