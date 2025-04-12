@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import CreateActivity from './CreateActivity';
+import CompleteActivity from './CompleteActivity';
+import ViewActivity from './ViewActivity';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <Routes>
+        <Route exact path="/" element={<Home/>}/>
+        <Route exact path="/create" element={<CreateActivity/>}/>
+        <Route exact path="/complete" element={<CompleteActivity/>}/>
+        <Route exact path="/view" element={<ViewActivity/>}/>
+      </Routes>
+    </HashRouter>
   );
 }
 

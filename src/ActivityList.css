@@ -1,0 +1,25 @@
+#empty-list-text {
+    display: none;
+}
+#show-activity-cell {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 5px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid;
+    border-width: 3px;
+    border-color: #000000;
+    text-decoration: none;
+}
+#show-activity-cell>p {
+    margin: 10px;
+}
+#activity-name-p {
+    font-size: 24px;
+}
+#video-player {
+    position: absolute;
+}

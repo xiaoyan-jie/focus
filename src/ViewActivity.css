@@ -1,0 +1,17 @@
+#progress-bar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+}
+#progress-bar {
+    width: 30%;
+    height: 40px;
+    border-radius: 10px;
+    border: solid;
+    border-width: 3px;
+}
+#progress-bar-container>h3 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

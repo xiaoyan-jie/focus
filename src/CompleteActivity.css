@@ -1,0 +1,67 @@
+.focused {
+    box-shadow: 0 0 20px #9ecaed;
+    /* background: linear-gradient(
+        to right,
+        red 0 50%,
+        transparent 50% 100%); */
+}
+#complete-activity-task-container {
+    margin: 15px;
+    padding: 10px;
+    border: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+}
+
+#complete-activity-home {
+    margin:10px;
+    border: solid;
+    border-radius:10px;
+    border-width: 0.5px;
+    border-color: grey;
+    padding: 10px;
+    width: fit-content;
+    background-color: #04AA6D;
+    text-decoration: none;
+    color: white
+}
+#all-tasks-finished-screen>button {
+    margin:10px;
+    border: solid;
+    border-radius:10px;
+    border-width: 0.5px;
+    border-color: grey;
+    padding: 9px;
+    width: fit-content;
+    background-color: grey;
+    text-decoration: none;
+    color: white
+}
+#all-tasks-finished-screen {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
+#all-tasks-finished-screen>button {
+    margin: auto;
+    margin-top: 10vh;
+    margin-bottom: 3vh;
+    margin-right: 8vh;
+}
+#complete-activity-home {
+    margin: auto;
+}
+#all-tasks-finished-screen>h1 {
+    margin: auto;
+    margin-top: 30vh;
+    margin-bottom: 10vh;
+}
+video::-webkit-media-controls-panel {
+    background-image: none !important;
+    filter: brightness(0.4);
+}
